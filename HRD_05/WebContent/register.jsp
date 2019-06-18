@@ -30,7 +30,16 @@
 	
 	// (찾아온 가장 큰 글번호)마지막 번호 + 1
 	maxno = maxno + 1;
-
+	
+	// 현재 날짜 가져오기(시간도 가져와야 한다면 java.util.Date)
+	java.sql.Date today = new java.sql.Date(System.currentTimeMillis());
+	//toString을 호출하면 yyyy-MM-DD 형식의 문자열로 Return
+	String disp = today.toString();
+	// - 를 "" 로 변환
+ 	disp = disp.replace("-", "");
+	
+	
+	
 %>	
     
 <!DOCTYPE html>
@@ -41,11 +50,11 @@
 </head>
 <body>
 	<h2 align="center">홈쇼핑 회원 등록</h2>
-	<form action="" id="">
+	<form action="" id="registerform">
 		<table align="center" border="1">
 			<tr>
 				<td align="center" width="250">회원번호(자동발생)</td>
-				<td width="400"> <input type="text" value='<%=maxno%>' 
+				<td width="400"> <input type="text" value='<%=maxno %>' width="300"
 				name="custno" id="custno" readonly="true" />
 				</td>
 			</tr>
@@ -70,7 +79,7 @@
 			<tr>
 				<td align="center">가입일자</td>
 				<td> 
-				<input type="text" name="joindate" id="joindate" />
+				<input type="text" value='<%=disp %>' name="joindate" id="joindate" />
 				</td>
 			</tr>			
 			<tr>
@@ -93,10 +102,55 @@
 			</tr>			
 		</table>
 	</form>
-	
-	
 </body>
 <script>
+	//등록 Button을 Click하면
+	document.getElementById("registerbtn")
+		.addEventListener("click", function(e){
+			//회원성명 입력란을 찾아오기
+			var n = document.getElementById('custname')
+			if(n.value.trim().length == 0){
+				alert("회원성명이 입력되지 않았습니다.");
+				n.focus();
+				return;
+			}
+			//회원전화 입력란을 찾아오기
+			var o = document.getElementById('phone')
+			if(o.value.trim().length == 0){
+				alert("회원전화가 입력되지 않았습니다.");
+				o.focus();
+				return;
+			}
+			//회원주소 입력란을 찾아오기
+			var p = document.getElementById('address')
+			if(p.value.trim().length == 0){
+				alert("회원주소가 입력되지 않았습니다.");
+				p.focus();
+				return;
+			}
+			//가입일자 입력란을 찾아오기
+			var q = document.getElementById('joindate')
+			if(q.value.trim().length == 0){
+				alert("가입일자가 입력되지 않았습니다.");
+				q.focus();
+				return;
+			}
+			//고객등급 입력란을 찾아오기
+			var r = document.getElementById('grade')
+			if(r.value.trim().length == 0){
+				alert("고객등급이 입력되지 않았습니다.");
+				r.focus();
+				return;
+			}
+			//도시코드 입력란을 찾아오기
+			var s = document.getElementById('city')
+			if(s.value.trim().length == 0){
+				alert("도시코드가 입력되지 않았습니다.");
+				s.focus();
+				return;
+			}
+		});
+	
 	
 </script>
 </html>
