@@ -38,8 +38,6 @@
 	// - 를 "" 로 변환
  	disp = disp.replace("-", "");
 	
-	
-	
 %>	
     
 <!DOCTYPE html>
@@ -103,6 +101,7 @@
 		</table>
 	</form>
 </body>
+
 <script>
 	//등록 Button을 Click하면
 	document.getElementById("registerbtn")
@@ -153,4 +152,5 @@
 	
 	
 </script>
+
 </html>

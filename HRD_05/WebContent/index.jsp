@@ -19,6 +19,6 @@
 	<section>
 		<iframe width="100%" height="300px" src="main.jsp" name="content" id="content" ></iframe>
 	</section>
-	<footer align="center">HRDKOREA Copyright©2016 All rights reserved. Human Resources Development Service of Korea. </footer>
+	<footer align="center">HRDKOREA Copyright©2019 All rights reserved. Human Resources Development Service of Korea. </footer>
 </body>
 </html>
