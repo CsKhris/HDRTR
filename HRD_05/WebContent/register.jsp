@@ -48,7 +48,7 @@
 </head>
 <body>
 	<h2 align="center">홈쇼핑 회원 등록</h2>
-	<form action="" id="registerform">
+	<form action="insert.jsp" id="registerform">
 		<table align="center" border="1">
 			<tr>
 				<td align="center" width="250">회원번호(자동발생)</td>
@@ -148,6 +148,10 @@
 				s.focus();
 				return;
 			}
+			
+			//form의 Data 전송
+			document.getElementById("registerform").submit();
+			
 		});
 	
 	
