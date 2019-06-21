@@ -103,6 +103,13 @@
 </body>
 
 <script>
+	//조회 Button을 Click하면
+	document.getElementById("searchbtn")
+		.addEventListener("click", function(e){
+			//Page 이동
+			location.href = "list.jsp";
+		});
+
 	//등록 Button을 Click하면
 	document.getElementById("registerbtn")
 		.addEventListener("click", function(e){
