@@ -13,13 +13,13 @@
 	<h2 align="center">회원목록조회/수정</h2>
 	<table align="center" border="1">
 		<tr>
-			<th>회원번호</th>
-			<th>회원성명</th>
+			<th width="70">회원번호</th>
+			<th width="70">회원성명</th>
 			<th>전화번호</th>
-			<th>주소</th>
-			<th>가입일자</th>
-			<th>고객등급</th>
-			<th>거주지역</th>
+			<th width="300">주소</th>
+			<th width="100">가입일자</th>
+			<th width="100">고객등급</th>
+			<th width="100">거주지역</th>
 		</tr>																
 	<%
 	
