@@ -9,6 +9,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style type="text/css">
+a {
+	text-decoration:none;
+}
+</style>
 <body>
 	<h2 align="center">회원목록조회/수정</h2>
 	<table align="center" border="1">
@@ -35,8 +40,9 @@
 	ResultSet rs = pstmt.executeQuery();
 	while(rs.next()){
 		out.println("<tr>");
-		out.println("<td align='center'>" +
-			rs.getInt("custno") + "</td>");
+		out.println("<td align='center'>"+
+		"<a href='detail.jsp?custno=" + rs.getInt("custno") + " '>" +
+			rs.getInt("custno") + "</a></td>");
 		out.println("<td align='center'>" +
 			rs.getString("custname") + "</td>");
 		out.println("<td align='center'>" +
