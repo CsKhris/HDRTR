@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<!-- JSP File을 만들 때는 무조건 추가하기 -->
+<!-- JSP File을 만들 때 무조건 추가하기 -->
 <%@ page import="java.sql.*" %>
 
 <%
@@ -96,13 +96,27 @@
 		</table>
 	</form>
 	
-</body>
-
-<script>
+	<script>
 	
 	//수정 Button을 Click하면
 	document.getElementById("updatebtn")
 		.addEventListener("click", function(e){
+			
+			//입력란 찾아오기
+			//유효성 검사를 할 필요가 없으므로 register.jsp에서 복사 하였다면 if문을 지웁니다.
+			
+			//회원성명 입력란을 찾아오기 
+			var n = document.getElementById('custname')
+			//회원전화 입력란을 찾아오기
+			var o = document.getElementById('phone')
+			//회원주소 입력란을 찾아오기
+			var p = document.getElementById('address')			
+			//가입일자 입력란을 찾아오기
+			var q = document.getElementById('joindate')			
+			//고객등급 입력란을 찾아오기
+			var r = document.getElementById('grade')			
+			//도시코드 입력란을 찾아오기
+			var s = document.getElementById('city')
 			
 			//form의 Data 전송
 			//submit();을 하게 되면 화면에 변화가 생깁니다.
@@ -113,15 +127,15 @@
 			var request = new XMLHttpRequest();
 			
 			//전송할 URL 생성
-			var url = "insert.jsp?"
+			var url = "update.jsp?"
 			//URL에 Parameter 붙이기
-			url += "custno=" + document.getElementById("custno").value;
-			url += "&custname=" + document.getElementById("custname").value;
-			url += "&phone=" + document.getElementById("phone").value;
-			url += "&address=" + document.getElementById("address").value;
-			url += "&joindate=" + document.getElementById("joindate").value;
-			url += "&grade=" + document.getElementById("grade").value;
-			url += "&city=" + document.getElementById("city").value;
+			url += "custno=" + document.getElementById("custno").value; // + no.value; 를 사용해도 됩니다.
+			url += "&custname=" + document.getElementById("custname").value; // + n.value; 를 사용해도 됩니다.
+			url += "&phone=" + document.getElementById("phone").value;	// + o.value; 를 사용해도 됩니다.
+			url += "&address=" + document.getElementById("address").value;	// + p.value; 를 사용해도 됩니다.
+			url += "&joindate=" + document.getElementById("joindate").value;	// + q.value; 를 사용해도 됩니다.
+			url += "&grade=" + document.getElementById("grade").value;	// + r.value; 를 사용해도 됩니다.
+			url += "&city=" + document.getElementById("city").value;	// + s.value; 를 사용해도 됩니다.
 			
 			//AJAX 요청 생성
 			request.open('GET', encodeURI(url));
@@ -144,5 +158,6 @@
 		});
 	
 </script>	
-
+	
+</body>
 </html>

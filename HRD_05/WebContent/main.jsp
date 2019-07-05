@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Main</title>
+<title>홈</title>
 </head>
 <body>
 	<h3 align="center">쇼핑몰 회원관리 프로그램</h3>

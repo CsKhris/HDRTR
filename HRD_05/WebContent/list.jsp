@@ -61,10 +61,8 @@ a {
 		else if(rs.getString("grade").equals("C"))
 			grade = "직원";
 		out.println("<td align='center'>" + grade + "</td>");
-	
 		out.println("<td align='center'>" +
 				rs.getString("city") + "</td>");
-		
 		out.println("</tr>");
 		
 	}

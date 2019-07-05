@@ -30,9 +30,7 @@ a {
 
 </style>
 <body>
-	<header>
-		<h2 align="center">쇼핑몰 회원관리 ver1.0</h2>
-	</header>
+	<header><h2 align="center">쇼핑몰 회원관리 ver1.0</h2></header>
 	<nav>
 		<a href="register.jsp" target="content" style="color:white;">회원등록</a>&nbsp;&nbsp;
 		<a href="list.jsp" target="content" style="color:white;">회원목록조회/수정</a>&nbsp;&nbsp; 
