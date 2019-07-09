@@ -6,7 +6,7 @@
 
 <%
 	// JSP에 Java Code를 사용하면 예외처리를 하지 않아도 됩니다.
-	// 
+	// JSP에는 모든 예외를 처리하는 기본 Code가 작성되어 있습니다.
 	
 	// Sequence의 다음 값 가져오기
 		
@@ -120,18 +120,18 @@
 
 <script>
 	
-	//조회 Button을 눌렀을 때의 Page 이동
+	// 조회 Button을 눌렀을 때의 Page 이동
 	document.getElementById("listbtn")
 		.addEventListener("click", function(e){
-			//Page 이동
+			// Page 이동
 			location.href = "list.jsp";
 		});
 
-	//등록 Button을 눌렀을 때의 Page 이동
+	// 등록 Button을 눌렀을 때의 Page 이동
 	document.getElementById("registerbtn")
 		.addEventListener("click", function(e){
 			
-			//회원성명 입력란을 찾아오기
+			// 회원성명 입력란을 찾아오기
 			var custno = document.getElementById('custno');
 			var custname = document.getElementById('custname');
 			var phone = document.getElementById('phone');
@@ -234,17 +234,20 @@
 			}
 			*/
 			
-			//form의 Data 전송
-			//submit();을 하게 되면 화면에 변화가 생깁니다.
-			//document.getElementById("registerform").submit();
+			// form의 Data 전송
+			// submit();을 하게 되면 화면에 변화가 생깁니다.
+			// document.getElementById("registerform").submit();
 			
-			//form의 Data를 가지고 insert.jsp File에 ajax 요청
-			//ajax 객체 생성 
+			// form의 Data를 가지고 insert.jsp File에 AJAX 요청
+			// AJAX 요청 객체 생성 
 			var request = new XMLHttpRequest();
 			
-			//전송할 URL 생성
+			// 전송할 URL 생성
 			var url = "insert.jsp?"
-			//URL에 Parameter 붙이기
+			
+			// URL에 Parameter 붙이기
+			
+			/*
 			url += "custno=" + document.getElementById("custno").value;
 			url += "&custname=" + document.getElementById("custname").value;
 			url += "&phone=" + document.getElementById("phone").value;
@@ -252,12 +255,22 @@
 			url += "&joindate=" + document.getElementById("joindate").value;
 			url += "&grade=" + document.getElementById("grade").value;
 			url += "&city=" + document.getElementById("city").value;
+			*/
 			
-			//AJAX 요청 생성
+			url += "custno=" + custno.value;
+			url += "&custname=" + custname.value;
+			url += "&phone=" + phone.value;
+			url += "&address=" + address.value;
+			url += "&joindate=" + joindate.value;
+			url += "&grade=" + grade.value;
+			url += "&city=" + city.value;
+			
+			// AJAX 요청 생성
 			request.open('GET', encodeURI(url));
+			// 요청
 			request.send(' '); 
 
-			//요청에 성공했을 때 수행할 내용 작성
+			// 요청에 성공했을 때 수행할 내용 작성
 			request.onreadystatechange = function(){
 				if(request.readyState == 4){
 					alert("회원등록이 완료 되었습니다!")

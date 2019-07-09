@@ -4,7 +4,7 @@
 <%@ page import="java.sql.*, java.util.*" %>
 
 <%
-	// Parameter Encoding 설정
+	// Parameter Encoding 설정 - '한글' 출력을 위한 설정
 	request.setCharacterEncoding("utf-8");
 	
 	// 전송된 Parameter 읽기
@@ -15,7 +15,11 @@
 	String joindate = request.getParameter("joindate");
     String grade = request.getParameter("grade");
     String city = request.getParameter("city");
-
+	
+    
+    // Joindate에서 연도 4자리, 월 2자리, 일 2자리를 추출하여 java.sql.Date 로 만들기
+    // Date(1900년도 지나온 연도, 월 -1, 일)
+    
 	// 연도 4자리 가져오기
 	String year = joindate.substring(0,4);
 	// 월 2자리 가져오기
@@ -31,7 +35,7 @@
 	
 	java.sql.Date registerDate = new java.sql.Date(cal.getTimeInMillis());
 	
-    // Database 접속
+    // Database 접속 - 위의 정보를 이용하여 Data 삽입
 	Class.forName("oracle.jdbc.OracleDriver");
 	Connection con = DriverManager.getConnection(
 		"jdbc:oracle:thin:@192.168.0.100:1521/xe",
@@ -48,6 +52,7 @@
 	pstmt.setDate(5, registerDate);
 	pstmt.setString(6, grade);
 	pstmt.setString(7, city);
+	
 	//SQL 실행
 	pstmt.executeUpdate();
 	
