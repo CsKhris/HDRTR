@@ -55,8 +55,7 @@ a {
 	// 결과 읽기
 	while(rs.next()){
 		out.println("<tr>");
-		out.println("<td align='center'>"+
-		"<a href='detail.jsp?custno=" + rs.getInt("custno") + " '>" +
+		out.println("<td align='center'>" + "<a href='detail.jsp?custno=" + rs.getInt("custno") + " '>" +
 			rs.getString("custno") + "</a></td>");
 		
 		out.println("<td align='center'>" +
@@ -90,12 +89,12 @@ a {
 			grade = "일반";
 		else if(rs.getString("grade").equals("C"))
 			grade = "직원";
+		*/
+		
 		out.println("<td align='center'>" + grade + "</td>");
 		out.println("<td align='center'>" +
 				rs.getString("city") + "</td>");
-		out.println("</tr>");
-		*/
-		
+		out.println("</tr>");	
 	}
 	out.println("</table>");
 	rs.close();
